@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>铁路无线WIFI平台</title>
+    <script src="../../js/lib/mui/mui.js"></script>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+     <!-- JS Files -->
+	<script type="text/javascript" src="../../js/lib/utils/backToKillApp.js"></script>
+    <script type="text/javascript" src="../../js/lib/utils/dialogUtil.js"></script>
+    <script type="text/javascript" src="../../js/lib/utils/storageUtil.js"></script>
+    <script type="text/javascript" src="../../js/lib/utils/pageLoadUtil.js"></script>
+	<!-- JS Files -->
+    <link href="../../css/app/shop/lib/common.css" rel="stylesheet"/>
+    <link href="../../css/app/shop/lib/shop.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">列车商城</h1>
+		<a class="mui-icon mui-pull-right mui-icon-search" id="search"></a>
+	</header>
+	
+	<div class="mui-content">
+		<!-- 跑马灯 -->
+		<div class="mui-slider">
+			<div class="mui-slider-group">
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="">
+						<p class="mui-slider-title">文字说明1</p>
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="">
+						<p class="mui-slider-title">文字说明2</p>
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<!-- 跑马灯 -->
+		
+		<section class="box-shop">
+			<div class="tit">
+				<h2>车上商品</h2>
+				<div class="tips-txt" style="display: none;">
+					首单专享<strong>7</strong>折优惠
+				</div>
+				<a href="#" class="more"
+					th:href="@{/columnentry(id=${result.arrList[0].get('columnMark').columnId},customermark=${result.arrList[0].get('customermark')})}">更多</a>
+			</div>
+	
+			<!-- 车上商城 -->
+			<ul class="shop-on-train">
+				<li th:each="mapItem : ${result.arrList[0].get('showInGoods')}">
+					<a href="#" class="bgA" th:each="entry : ${mapItem}"
+					th:href="@{/itemdetailshop(id=${entry.value.goodsInfoId},columnId=${entry.key.columnId},customermark=${result.arrList[0].get('customermark')})}">
+						<img src="./images/pic/15.png" alt=""
+						th:src="@{${entry.value.smallImgUrl}}"></img> <span class="price"
+						th:text="'¥ '+${entry.value.price} / 100">¥ 28.5</span>
+						<div class="name" th:text="${entry.value.goodsTitle}">薯片</div>
+				</a>
+				</li>
+			</ul>
+		</section>
+		
+		<!-- 更多惊喜 -->
+		<section class="box-shop">
+			<div class="tit mui-bar-tab">
+				<h2>更多惊喜</h2>
+			</div>
+	
+			<!-- 更多栏目 -->
+			<div class="shop-more">
+				<div class="item" th:each="mapItem : ${result.arrList[0].get('showInSubCols')}">
+					<div class="side">
+						<a href="#" class="a-lg" th:href="@{/columnentry(id=${mapItem.key.columnId},customermark=${result.arrList[0].get('customermark')})}" >
+						<img src="./images/ico02.png" th:src="@{${mapItem.key.imageUrl}}"></img>
+						<span th:text="${mapItem.key.name}">更多栏目
+						</span>
+						</a>
+					</div>
+					<div class="side">
+						<a th:each="subColItem : ${mapItem.value}" href="#" class="a-sm" th:href="@{/columnentry(id=${subColItem.columnId}, customermark=${result.arrList[0].get('customermark')})}">
+						<img src="../images/ico07.png" th:src="@{${subColItem.imageUrl}}"></img>
+						<span th:text="${subColItem.name}">礼盒专区</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/lib/mui/mui.js"></script>
+     <!-- JS Files -->
+	<script type="text/javascript" src="../js/lib/utils/backToKillApp.js"></script>
+    <script type="text/javascript" src="../js/lib/utils/dialogUtil.js"></script>
+    <script type="text/javascript" src="../js/lib/utils/storageUtil.js"></script>
+    <script type="text/javascript" src="../js/lib/utils/pageLoadUtil.js"></script>
+	<!-- JS Files -->
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init({
+			beforeback:function(){
+				closeApp();
+			}
+		});
+    </script>
+</head>
+<body>
+	<form class="mui-input-group">
+		<div class="mui-input-row">
+			<label>input</label>
+			<input type="text" class="mui-input-clear" placeholder="请输入">
+		</div>
+	</form>
+</body>
+</html>
