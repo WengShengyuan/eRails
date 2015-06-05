@@ -1,13 +1,13 @@
-var shopUrl = 'pages/shop/shopindex.html';
-var cartUrl = 'pages/shop/cartlist.html';
+var shopUrl = 'pages/shop/shopindex/shopindex.html';
+var catagoryUrl = 'pages/shop/account/cartlist.html';
 var accountUrl = 'pages/tab-account.html';
 
 var shopId = 'shop';
-var cartId = 'cart';
+var catagoryId = 'catagory';
 var accountId = 'account';
 
 var shopView;
-var cartView;
+var catagoryView;
 var accountView;
 
 var contentStyle = {
@@ -33,19 +33,19 @@ function preloadPage() {
 		styles : contentStyle,
 		extras : {}
 	});
-	cartView = mui.preload({
-		url : cartUrl,
-		id : cartId,
+	catagoryView = mui.preload({
+		url : catagoryUrl,
+		id : catagoryId,
 		styles : contentStyle,
 		extras : {}
 	});
 	console.log('preloaded');
 	shopView.addEventListener('loaded', function() {
-		console.log('auto show shopView');
+		console.log('shopView loaded');
 		shopView.show();  
 		document.getElementById(shopId).addEventListener('tap', showShopView);
 		document.getElementById(accountId).addEventListener('tap', showAccountView);
-		document.getElementById(cartId).addEventListener('tap', showCartView);
+		document.getElementById(catagoryId).addEventListener('tap', showCatagoryView);
 //		document.getElementById('search').addEventListener('tap', search);
 		console.log('event listener added');
 	});
@@ -54,7 +54,6 @@ function preloadPage() {
 
 mui.plusReady(function(){
 	preloadPage();
-	
 })
 
 
@@ -64,13 +63,19 @@ function showShopView () {
 //	cartView.hide();
 //	accountView.hide();
 	shopView.show();
+	console.log('view shown');
+//	shopView.reload();
+//	console.log('reloaded');
 };
 
-function showCartView () {
-	console.log('show cart view...');
+function showCatagoryView () {
+	console.log('show catagory view...');
 //	accountView.hide();
 //	shopView.hide();
-	cartView.show();
+	catagoryView.show();
+	console.log('view shown');
+//	catagoryView.reload();
+//	console.log('reloaded');
 };
 
 function showAccountView () {
@@ -78,6 +83,7 @@ function showAccountView () {
 //	cartView.hide();
 //	shopView.hide();
 	accountView.show();
+	console.log('view shown');
 };
 
 //function search () {

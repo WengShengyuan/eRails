@@ -36,7 +36,8 @@
 					password : pass
 				},
 				dataType:'json',//服务器返回json格式数据
-				type:'get',//HTTP请求类型
+				type:'post',//HTTP请求类型
+				timeout : 1000,
 				success:function(data){
 					console.log(data.map.result);
 					if(data.stateId == 0){
@@ -45,6 +46,9 @@
 						alert(data.errorMsg);
 					}
 					
+				},
+				error : function(xhr,type,errorThrown){
+					alert('获取用户信息失败:'+type);
 				}
 			});
       	}
