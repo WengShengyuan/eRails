@@ -9,7 +9,7 @@ var util_callBack;
  */
 function triggerScan(callBackFun) {
 	util_callBack = callBackFun;
-	clicked(barcodePageURL ,false,true);
+	clicked(barcodePageURL ,true,true);
 }
 
 function scaned(t,r,f){
