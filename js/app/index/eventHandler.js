@@ -19,7 +19,7 @@ function preloadPage() {
 	shopView = mui.preload({
 		url : shopUrl,
 		id : shopId,
-		styles : tab_page_styles;
+		styles : tab_page_styles,
 		extras : {}
 		
 	});
