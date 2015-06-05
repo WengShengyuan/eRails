@@ -1,3 +1,12 @@
+/**页面要增加back事件监听**/
+//		mui.init({
+//	    	mui.back = function () {
+//    			closeApp();
+//    		}
+//	    });
+
+
+
 var first = null;
 
 /**
