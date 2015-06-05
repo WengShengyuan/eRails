@@ -13,6 +13,7 @@ var first = null;
  * 退出按钮按下的事件
  */
 function closeApp () {
+	console.log('quiting... OS:' + plus.os.name);
 	doubleBackWithinOneSecond();
 //	confirmToClose();
 }
@@ -32,7 +33,11 @@ function doubleBackWithinOneSecond() {
 		}, 1000);
 	} else {
 		if (new Date().getTime() - first < 1000) {
-			plus.runtime.quit();
+			if(plus.os.name=='iOS'){
+				mui.toast('iOS系统请直接按HOME键退出');				
+			} else {
+				plus.runtime.quit();
+			}
 		}
 	}
 }
@@ -47,7 +52,11 @@ function confirmToClose() {
 		if(i>=0){
 			if(i==0){
 				//确认
-				plus.runtime.quit();
+				if(plus.os.name=='iOS'){
+					mui.toast('iOS系统请直接按HOME键退出');				
+				} else {
+					plus.runtime.quit();
+				}
 			} else {
 				//取消
 			}
