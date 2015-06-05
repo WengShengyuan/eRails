@@ -11,6 +11,9 @@
     <link href="../../../css/app/shop/lib/shop.css" rel="stylesheet"/>
     <script type="text/javascript" charset="utf-8">
 	    mui.init({
+	    	mui.back = function () {
+      			closeApp();
+      		}
 	    	subpages: [
       			{
       				url:'cartlistcontent.html',//子页面HTML地址，支持本地地址和网络地址

@@ -13,7 +13,11 @@
     <script type="text/javascript" src="js/app/index/eventHandler.js"></script>
 	<!-- JS Files -->
     <script type="text/javascript" charset="utf-8">
-      	mui.init();
+      	mui.init({
+      		mui.back = function () {
+      			closeApp();
+      		}
+      	});
     </script>
 </head>
 <body>

@@ -19,9 +19,15 @@
       		plus.navigator.closeSplashscreen();
       	}
       	mui.getWebviewById('shopcontent').addEventListener('loaded',closeSplash());
-    
-//  	mui.init();
+//  	mui.init({
+//			mui.back = function () {
+//    			closeApp();
+//    		}
+//		});
       	mui.init({
+      		mui.back = function () {
+      			closeApp();
+      		}
       		subpages: [
       			{
       				url:'shopindexcontent.html',//子页面HTML地址，支持本地地址和网络地址
