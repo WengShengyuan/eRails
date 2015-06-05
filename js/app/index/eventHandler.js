@@ -10,10 +10,6 @@ var shopView;
 var catagoryView;
 var accountView;
 
-var contentStyle = {
-	top:'0px',
-	bottom:'50px'
-};
 
 
 //三个标签预载
@@ -23,20 +19,20 @@ function preloadPage() {
 	shopView = mui.preload({
 		url : shopUrl,
 		id : shopId,
-		styles : contentStyle,
+		styles : tab_page_styles;
 		extras : {}
 		
 	});
 	accountView = mui.preload({
 		url : accountUrl,
 		id : accountId,
-		styles : contentStyle,
+		styles : tab_page_styles,
 		extras : {}
 	});
 	catagoryView = mui.preload({
 		url : catagoryUrl,
 		id : catagoryId,
-		styles : contentStyle,
+		styles : tab_page_styles,
 		extras : {}
 	});
 	console.log('preloaded');
@@ -46,7 +42,6 @@ function preloadPage() {
 		document.getElementById(shopId).addEventListener('tap', showShopView);
 		document.getElementById(accountId).addEventListener('tap', showAccountView);
 		document.getElementById(catagoryId).addEventListener('tap', showCatagoryView);
-//		document.getElementById('search').addEventListener('tap', search);
 		console.log('event listener added');
 	});
 }

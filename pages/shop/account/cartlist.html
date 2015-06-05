@@ -7,6 +7,7 @@
     <script src="../../../js/lib/mui/mui.js"></script>
     <link href="../../../css/mui.min.css" rel="stylesheet"/>
     
+    <script type="application/javascript" src="../../../js/app/comvalue.js"></script>
     <link href="../../../css/app/shop/lib/common.css" rel="stylesheet"/>
     <link href="../../../css/app/shop/lib/shop.css" rel="stylesheet"/>
     <script type="text/javascript" charset="utf-8">
@@ -16,12 +17,9 @@
       		}
 	    	subpages: [
       			{
-      				url:'cartlistcontent.html',//子页面HTML地址，支持本地地址和网络地址
+      				  url:'cartlistcontent.html',//子页面HTML地址，支持本地地址和网络地址
 				      id:'content',//子页面标志
-				      styles:{
-				      	top:'45px',
-						bottom:'0px'
-				      }
+				      styles: tab_content_styles
       			}
       		]
 	    });

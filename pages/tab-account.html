@@ -9,51 +9,18 @@
     <script src="../js/lib/mui/mui.min.js"></script>
     <link href="../css/mui.min.css" rel="stylesheet"/>
      <!-- JS Files -->
+     <script type="application/javascript" src="../js/app/comvalue.js"></script>
+     <script type="application/javascript" src="../js/lib/utils/barcodeUtil/barcodeUtil.js"></script>
 	<script type="text/javascript" src="../js/lib/utils/backToKillApp.js"></script>
     <script type="text/javascript" src="../js/lib/utils/dialogUtil.js"></script>
     <script type="text/javascript" src="../js/lib/utils/storageUtil.js"></script>
     <script type="text/javascript" src="../js/lib/utils/pageLoadUtil.js"></script>
-    <script type="text/javascript" src="../js/app/account/barcodeparse.js"></script>
+    <script type="text/javascript" src="../js/app/account/login.js"></script>
 	<!-- JS Files -->
 	
-	<!-- h5 js -->
-	<script src="../js/lib/mui/common.js"></script>
-    <!-- h5 js -->
     
     <script type="text/javascript" charset="utf-8">
       	mui.init();
-      	
-      	function login() {
-      		
-      		console.log('logging in');
-      		
-      		var user = document.getElementById('userName').value;
-      		var pass = document.getElementById('password').value;
-      		
-      		mui.ajax('http://192.168.1.104:8080/web/ajax/user/login',{
-				data:{
-					userName : user,
-					password : pass
-				},
-				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
-				timeout : 1000,
-				success:function(data){
-					console.log(data.map.result);
-					if(data.stateId == 0){
-						alert('登陆成功');
-					} else {
-						alert(data.errorMsg);
-					}
-					
-				},
-				error : function(xhr,type,errorThrown){
-					alert('获取用户信息失败:'+type);
-				}
-			});
-      	}
-      	
-      	
     </script>
 </head>
 <body>
@@ -87,7 +54,7 @@
 		</form>
 		<div class="mui-button-row">
 				<button class="mui-btn mui-btn-blue" onclick="login()">登陆</button>
-				<button class="mui-btn"  onclick="clicked('apipage/barcode_scan.html',false,true);">扫码登陆</button>
+				<button class="mui-btn"  onclick="triggerScan(afterGetCode)">扫码登陆</button>
 		</div>
 		<a class="mui-btn-link mui-pull-right">注册新用户</p>
 	</div>

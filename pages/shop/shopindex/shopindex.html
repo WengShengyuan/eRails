@@ -7,6 +7,7 @@
     <script src="../../../js/lib/mui/mui.js"></script>
     <link href="../../../css/mui.min.css" rel="stylesheet"/>
      <!-- JS Files -->
+     <script type="application/javascript" src="../../../js/app/comvalue.js"></script>
 	<script type="text/javascript" src="../../../js/lib/utils/backToKillApp.js"></script>
     <script type="text/javascript" src="../../../js/lib/utils/dialogUtil.js"></script>
     <script type="text/javascript" src="../../../js/lib/utils/storageUtil.js"></script>
@@ -19,11 +20,6 @@
       		plus.navigator.closeSplashscreen();
       	}
       	mui.getWebviewById('shopcontent').addEventListener('loaded',closeSplash());
-//  	mui.init({
-//			mui.back = function () {
-//    			closeApp();
-//    		}
-//		});
       	mui.init({
       		mui.back = function () {
       			closeApp();
@@ -32,10 +28,7 @@
       			{
       				url:'shopindexcontent.html',//子页面HTML地址，支持本地地址和网络地址
 				      id:'shopcontent',//子页面标志
-				      styles:{
-				      	top:'45px',
-						bottom:'0px'
-				      }
+				      styles: tab_content_styles
       			}
       		]
       	});
