@@ -94,7 +94,7 @@ footer {
 	color: #FFF;
 }
 .fbt {
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	background-color: #FFCC33;
 	float: left;
@@ -111,7 +111,8 @@ footer {
 			<p class="tip">...载入中...</p>
 		</div>
 		<footer>
-			<div class="mui-button-row mui-button" onclick="back();">取　 消</div>
+			<!-- 如果要启用相册，则要改fbt的宽度值，否则两个都是100% -->
+			<div class="fbt" onclick="back();">取　 消</div>
 			<!-- div class="fbt" onclick="scanPicture();">从相册选择二维码</div -->
 		</footer>
 	</body>
