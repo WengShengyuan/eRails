@@ -1,6 +1,6 @@
 var shopUrl = 'pages/shop/shopindex/shopindex.html';
 var catagoryUrl = 'pages/shop/account/cartlist.html';
-var accountUrl = 'pages/tab-account.html';
+var accountUrl = 'pages/shop/account/tab-account.html';
 
 var shopId = 'shop';
 var catagoryId = 'catagory';
