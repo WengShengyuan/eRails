@@ -10,7 +10,15 @@
     <link href="../../../css/app/shop/lib/common.css" rel="stylesheet"/>
     <link href="../../../css/app/shop/lib/shop.css" rel="stylesheet"/>
     <script type="text/javascript" charset="utf-8">
-      	mui.init();
+//    	mui.init();
+      	//测试代码，延迟关闭splash
+      	mui.init({
+      		mui.currentWebview().addEventListener('loaded',closeSplash);
+      	});
+      	
+      	function closeSplash() {
+      		plus.navigator.closeSplashscreen();
+      	}
     </script>
 </head>
 <body>
