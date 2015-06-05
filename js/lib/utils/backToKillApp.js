@@ -5,6 +5,7 @@ var first = null;
  */
 function closeApp () {
 	doubleBackWithinOneSecond();
+//	confirmToClose();
 }
 
 /*********************可选的关闭函数*****************************/
@@ -25,4 +26,24 @@ function doubleBackWithinOneSecond() {
 			plus.runtime.quit();
 		}
 	}
+}
+
+/**
+ * 确认框确认退出
+ */
+function confirmToClose() {
+	var buttons=['确认','取消'];
+	plus.nativeUI.confirm('确认要退出程序吗?',function(e){
+		var i = e.index;
+		if(i>=0){
+			if(i==0){
+				//确认
+				plus.runtime.quit();
+			} else {
+				//取消
+			}
+		} else {
+			//后退键
+		}
+	},'退出程序',buttons);
 }
