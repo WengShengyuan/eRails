@@ -14,12 +14,18 @@
 	<!-- JS Files -->
     
     <script type="text/javascript" charset="utf-8">
+    	//测试代码，延迟关闭splash
+      	function closeSplash() {
+      		plus.navigator.closeSplashscreen();
+      	}
+      	mui.getWebviewById('shopcontent').addEventListener('loaded',closeSplash());
+    
 //  	mui.init();
       	mui.init({
       		subpages: [
       			{
       				url:'shopindexcontent.html',//子页面HTML地址，支持本地地址和网络地址
-				      id:'content',//子页面标志
+				      id:'shopcontent',//子页面标志
 				      styles:{
 				      	top:'45px',
 						bottom:'0px'
@@ -27,6 +33,8 @@
       			}
       		]
       	});
+      	
+      	
     </script>
 </head>
 <body>
