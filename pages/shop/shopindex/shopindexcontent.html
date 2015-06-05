@@ -23,13 +23,13 @@
 			<div class="mui-slider-group">
 				<div class="mui-slider-item">
 					<a href="#">
-						<img src="">
+						<img src="../../../img/fakeimg.jpg">
 						<p class="mui-slider-title">文字说明1</p>
 					</a>
 				</div>
 				<div class="mui-slider-item">
 					<a href="#">
-						<img src="">
+						<img src="../../../img/fakeimg.jpg">
 						<p class="mui-slider-title">文字说明2</p>
 					</a>
 				</div>
@@ -48,21 +48,50 @@
 					首单专享<strong>7</strong>折优惠
 				</div>
 				<a href="#" class="more"
-					th:href="@{/columnentry(id=${result.arrList[0].get('columnMark').columnId},customermark=${result.arrList[0].get('customermark')})}">更多</a>
+					th:href="#">更多</a>
 			</div>
 	
 			<!-- 车上商城 -->
-			<ul class="shop-on-train">
-				<li th:each="mapItem : ${result.arrList[0].get('showInGoods')}">
-					<a href="#" class="bgA" th:each="entry : ${mapItem}"
-					th:href="@{/itemdetailshop(id=${entry.value.goodsInfoId},columnId=${entry.key.columnId},customermark=${result.arrList[0].get('customermark')})}">
-						<img src="./images/pic/15.png" alt=""
-						th:src="@{${entry.value.smallImgUrl}}"></img> <span class="price"
-						th:text="'¥ '+${entry.value.price} / 100">¥ 28.5</span>
-						<div class="name" th:text="${entry.value.goodsTitle}">薯片</div>
-				</a>
+			<ul class="mui-table-view mui-grid-view">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4">
+					<a href="#">
+						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+						<div class="mui-media-body">文字说明1</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4">
+					<a href="#">
+						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+						<div class="mui-media-body">文字说明2</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4">
+					<a href="#">
+						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+						<div class="mui-media-body">文字说明2</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4">
+					<a href="#">
+						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+						<div class="mui-media-body">文字说明2</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4">
+					<a href="#">
+						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+						<div class="mui-media-body">文字说明2</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4">
+					<a href="#">
+						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+						<div class="mui-media-body">文字说明2</div>
+					</a>
 				</li>
 			</ul>
+			
+			
 		</section>
 		
 		<!-- 更多惊喜 -->
@@ -73,20 +102,44 @@
 	
 			<!-- 更多栏目 -->
 			<div class="shop-more">
-				<div class="item" th:each="mapItem : ${result.arrList[0].get('showInSubCols')}">
+				<div class="item">
 					<div class="side">
-						<a href="#" class="a-lg" th:href="@{/columnentry(id=${mapItem.key.columnId},customermark=${result.arrList[0].get('customermark')})}" >
-						<img src="./images/ico02.png" th:src="@{${mapItem.key.imageUrl}}"></img>
-						<span th:text="${mapItem.key.name}">更多栏目
-						</span>
+						<a href="#" class="a-lg" >
+							<img src="../../../img/fakeimg.jpg"></img>
+							<span>更多栏目</span>
 						</a>
 					</div>
 					<div class="side">
-						<a th:each="subColItem : ${mapItem.value}" href="#" class="a-sm" th:href="@{/columnentry(id=${subColItem.columnId}, customermark=${result.arrList[0].get('customermark')})}">
-						<img src="../images/ico07.png" th:src="@{${subColItem.imageUrl}}"></img>
-						<span th:text="${subColItem.name}">礼盒专区</span>
+						<a href="#" class="a-sm">
+						<img src="../../../img/fakeimg.jpg"></img>
+						<span>礼盒专区</span>
 						</a>
 					</div>
+					<div class="side">
+						<a href="#" class="a-sm">
+						<img src="../../../img/fakeimg.jpg"></img>
+						<span>礼盒专区</span>
+						</a>
+					</div>
+					<div class="side">
+						<a href="#" class="a-lg" >
+							<img src="../../../img/fakeimg.jpg"></img>
+							<span>更多栏目</span>
+						</a>
+					</div>
+					<div class="side">
+						<a href="#" class="a-sm">
+						<img src="../../../img/fakeimg.jpg"></img>
+						<span>礼盒专区</span>
+						</a>
+					</div>
+					<div class="side">
+						<a href="#" class="a-sm">
+						<img src="../../../img/fakeimg.jpg"></img>
+						<span>礼盒专区</span>
+						</a>
+					</div>
+					
 				</div>
 			</div>
 		</section>
