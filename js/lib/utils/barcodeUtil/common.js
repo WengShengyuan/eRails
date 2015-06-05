@@ -62,7 +62,7 @@ w.clicked=function(id,wa,ns){
 		wa&&(waiting=plus.nativeUI.showWaiting());
 		var pre='';//'http://192.168.1.178:8080/h5/';
 		openw=plus.webview.create(pre+id,id,{scrollIndicator:'none',scalable:false});
-		console.log('auto open when loaded: '+ ns);
+		console.log('不自动打开: '+ ns);
 		ns||openw.addEventListener('loaded',function(){//页面加载完成后才显示
 //		setTimeout(function(){//延后显示可避免低端机上动画时白屏
 			console.log('page loaded.');

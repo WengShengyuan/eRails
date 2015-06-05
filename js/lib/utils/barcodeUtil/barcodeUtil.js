@@ -1,15 +1,14 @@
 /*需要引入common.js*/
 
-//这个地址在使用的时候改
-var barcodePageURL = 'barcode_scan.html';
 var util_callBack;
 /**
  * 扫描启动
  * @param {Object} callBackFun 扫描完成的执行函数（function(e)形式，e是扫描结果）
  */
-function triggerScan(callBackFun) {
+function triggerScan(URL, callBackFun) {
+	console.log('scan triggered');
 	util_callBack = callBackFun;
-	clicked(barcodePageURL ,true,true);
+	clicked(URL ,true,false);
 }
 
 function scaned(t,r,f){
@@ -18,7 +17,7 @@ function scaned(t,r,f){
 
 
 
-/********* common.js ************/
+/**********COMMON.JS***************/
 (function(w){
 // 空函数
 function shield(){
@@ -83,7 +82,7 @@ w.clicked=function(id,wa,ns){
 		wa&&(waiting=plus.nativeUI.showWaiting());
 		var pre='';//'http://192.168.1.178:8080/h5/';
 		openw=plus.webview.create(pre+id,id,{scrollIndicator:'none',scalable:false});
-		console.log('auto open when loaded: '+ ns);
+		console.log('不自动打开: '+ ns);
 		ns||openw.addEventListener('loaded',function(){//页面加载完成后才显示
 //		setTimeout(function(){//延后显示可避免低端机上动画时白屏
 			console.log('page loaded.');
