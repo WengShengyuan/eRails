@@ -6,11 +6,28 @@
     <title></title>
     <script src="../../../js/lib/mui/mui.js"></script>
     <link href="../../../css/mui.min.css" rel="stylesheet"/>
+    <script type="application/javascript" src="../../../js/app/comvalue.js"></script>
+    <script type="application/javascript" src="../../../js/lib/utils/backToKillApp.js"></script>
     <script type="text/javascript" charset="utf-8">
-      	mui.init();
+      	mui.back = function () {
+      		closeApp();
+      	}
+      	mui.init({
+      		subpages: [
+      			{
+      				url:'catagoriescontent.html',//子页面HTML地址，支持本地地址和网络地址
+				      id:'catagoriescontent',//子页面标志
+				      styles: tab_content_styles
+      			}
+      		]
+      	});
     </script>
 </head>
 <body>
-	
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">栏目列表</h1>
+		<a class="mui-icon mui-pull-right mui-icon-search" id="editList"></a>
+	</header>
 </body>
 </html>

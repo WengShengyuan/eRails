@@ -1,7 +1,7 @@
 var tabCount = 3;
 var tabpages=[
 'pages/shop/shopindex/shopindex.html',
-'pages/shop/account/cartlist.html', 
+'pages/shop/catagories/catagoriesindex.html', 
 'pages/shop/account/tab-account.html'
 ];
 
