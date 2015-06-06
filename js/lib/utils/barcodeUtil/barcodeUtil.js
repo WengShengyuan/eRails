@@ -8,7 +8,7 @@ var util_callBack;
 function triggerScan(URL, callBackFun) {
 	console.log('scan triggered');
 	util_callBack = callBackFun;
-	clicked(URL ,true,false);
+	clicked(URL ,true,true);
 }
 
 function scaned(t,r,f){

@@ -83,4 +83,13 @@ function closeWebView(view){
 	view.close();
 }
 
+/**
+ * 创建并打开webview
+ * @param {Object} URL
+ * @param {Object} styles
+ */
+function createAndLoad(URL, styles){
+	mui.openWindow(URL,URL,styles);
+}
+
 
