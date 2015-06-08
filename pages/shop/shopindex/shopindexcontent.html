@@ -12,139 +12,163 @@
     <link href="../../../css/app/shop/lib/common.css" rel="stylesheet"/>
     <link href="../../../css/app/shop/lib/shop.css" rel="stylesheet"/>
     <script type="text/javascript" charset="utf-8">
+    
+    	function pulldownRefresh() {
+	    	console.log('pull down refresh');
+	    	setTimeout(function () {
+	    		mui('#refreshContainer').pullRefresh().endPulldownToRefresh(); //refresh completed
+	    	}, 1000);
+	    }
+    
     	//测试代码，延迟关闭splash
     	mui.plusReady(function(){
     		plus.navigator.setFullscreen(true);
     		plus.navigator.closeSplashscreen();
     	});
-      	mui.init();
+      	mui.init({
+      		pullRefresh : {
+			    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+			    down : {
+			      contentdown : "下拉列表刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+			      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+			      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+			      callback : pulldownRefresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+			    }
+			  }
+      	});
     </script>
 </head>
 <body>
-	<!-- 跑马灯 -->
-		<div class="mui-slider">
-			<div class="mui-slider-group">
-				<div class="mui-slider-item">
-					<a href="#">
-						<img src="../../../img/fakeimg.jpg">
-						<p class="mui-slider-title">文字说明1</p>
-					</a>
+	
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!-- 跑马灯 -->
+			<div class="mui-slider">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../../../img/fakeimg.jpg">
+							<p class="mui-slider-title">文字说明1</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../../../img/fakeimg.jpg">
+							<p class="mui-slider-title">文字说明2</p>
+						</a>
+					</div>
 				</div>
-				<div class="mui-slider-item">
-					<a href="#">
-						<img src="../../../img/fakeimg.jpg">
-						<p class="mui-slider-title">文字说明2</p>
-					</a>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
 				</div>
 			</div>
-			<div class="mui-slider-indicator">
-				<div class="mui-indicator mui-active"></div>
-				<div class="mui-indicator"></div>
-			</div>
+			<!-- 跑马灯 -->
+			
+			<section class="box-shop">
+				<div class="tit">
+					<h2>车上商品</h2>
+					<div class="tips-txt" style="display: none;">
+						首单专享<strong>7</strong>折优惠
+					</div>
+					<a href="#" class="more"
+						th:href="#">更多</a>
+				</div>
+		
+				<!-- 车上商城 -->
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						<a href="#">
+							<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+							<div class="mui-media-body">文字说明1</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						<a href="#">
+							<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+							<div class="mui-media-body">文字说明2</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						<a href="#">
+							<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+							<div class="mui-media-body">文字说明2</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						<a href="#">
+							<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+							<div class="mui-media-body">文字说明2</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						<a href="#">
+							<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+							<div class="mui-media-body">文字说明2</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4">
+						<a href="#">
+							<img class="mui-media-object" src="../../../img/fakeimg.jpg">
+							<div class="mui-media-body">文字说明2</div>
+						</a>
+					</li>
+				</ul>
+				
+				
+			</section>
+			
+			<!-- 更多惊喜 -->
+			<section class="box-shop">
+				<div class="tit mui-bar-tab">
+					<h2>更多惊喜</h2>
+				</div>
+		
+				<!-- 更多栏目 -->
+				<div class="shop-more">
+					<div class="item">
+						<div class="side">
+							<a href="#" class="a-lg" >
+								<img src="../../../img/fakeimg.jpg"></img>
+								<span>更多栏目</span>
+							</a>
+						</div>
+						<div class="side">
+							<a href="#" class="a-sm">
+							<img src="../../../img/fakeimg.jpg"></img>
+							<span>礼盒专区</span>
+							</a>
+						</div>
+						<div class="side">
+							<a href="#" class="a-sm">
+							<img src="../../../img/fakeimg.jpg"></img>
+							<span>礼盒专区</span>
+							</a>
+						</div>
+						<div class="side">
+							<a href="#" class="a-lg" >
+								<img src="../../../img/fakeimg.jpg"></img>
+								<span>更多栏目</span>
+							</a>
+						</div>
+						<div class="side">
+							<a href="#" class="a-sm">
+							<img src="../../../img/fakeimg.jpg"></img>
+							<span>礼盒专区</span>
+							</a>
+						</div>
+						<div class="side">
+							<a href="#" class="a-sm">
+							<img src="../../../img/fakeimg.jpg"></img>
+							<span>礼盒专区</span>
+							</a>
+						</div>
+						
+					</div>
+				</div>
+			</section>
 		</div>
-		<!-- 跑马灯 -->
+	</div>
 		
-		<section class="box-shop">
-			<div class="tit">
-				<h2>车上商品</h2>
-				<div class="tips-txt" style="display: none;">
-					首单专享<strong>7</strong>折优惠
-				</div>
-				<a href="#" class="more"
-					th:href="#">更多</a>
-			</div>
-	
-			<!-- 车上商城 -->
-			<ul class="mui-table-view mui-grid-view">
-				<li class="mui-table-view-cell mui-media mui-col-xs-4">
-					<a href="#">
-						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
-						<div class="mui-media-body">文字说明1</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4">
-					<a href="#">
-						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
-						<div class="mui-media-body">文字说明2</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4">
-					<a href="#">
-						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
-						<div class="mui-media-body">文字说明2</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4">
-					<a href="#">
-						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
-						<div class="mui-media-body">文字说明2</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4">
-					<a href="#">
-						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
-						<div class="mui-media-body">文字说明2</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4">
-					<a href="#">
-						<img class="mui-media-object" src="../../../img/fakeimg.jpg">
-						<div class="mui-media-body">文字说明2</div>
-					</a>
-				</li>
-			</ul>
-			
-			
-		</section>
-		
-		<!-- 更多惊喜 -->
-		<section class="box-shop">
-			<div class="tit mui-bar-tab">
-				<h2>更多惊喜</h2>
-			</div>
-	
-			<!-- 更多栏目 -->
-			<div class="shop-more">
-				<div class="item">
-					<div class="side">
-						<a href="#" class="a-lg" >
-							<img src="../../../img/fakeimg.jpg"></img>
-							<span>更多栏目</span>
-						</a>
-					</div>
-					<div class="side">
-						<a href="#" class="a-sm">
-						<img src="../../../img/fakeimg.jpg"></img>
-						<span>礼盒专区</span>
-						</a>
-					</div>
-					<div class="side">
-						<a href="#" class="a-sm">
-						<img src="../../../img/fakeimg.jpg"></img>
-						<span>礼盒专区</span>
-						</a>
-					</div>
-					<div class="side">
-						<a href="#" class="a-lg" >
-							<img src="../../../img/fakeimg.jpg"></img>
-							<span>更多栏目</span>
-						</a>
-					</div>
-					<div class="side">
-						<a href="#" class="a-sm">
-						<img src="../../../img/fakeimg.jpg"></img>
-						<span>礼盒专区</span>
-						</a>
-					</div>
-					<div class="side">
-						<a href="#" class="a-sm">
-						<img src="../../../img/fakeimg.jpg"></img>
-						<span>礼盒专区</span>
-						</a>
-					</div>
-					
-				</div>
-			</div>
-		</section>
 </body>
 </html>
